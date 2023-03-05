@@ -2,7 +2,7 @@
 
 #### Api consultamed, agendamento simples e fácil
 
-![](https://img.shields.io/static/v1?label=license&message=mit&color=199bba) ![](https://img.shields.io/static/v1?label=npm&message=9.5.0&color=199bba) ![](https://img.shields.io/static/v1?label=node&message=19.7.0&color=199bba) ![](https://img.shields.io/static/v1?label=Framework&message=Express.js&color=199bba) ![](https://img.shields.io/static/v1?label=ORM&message=Sequelize&color=199bba) ![](https://img.shields.io/static/v1?label=PRs&message=Welcome&color=44e22c)
+![](https://img.shields.io/static/v1?label=license&message=mit&color=df0460) ![](https://img.shields.io/static/v1?label=versão&message=1.0.0&color=df0460) ![](https://img.shields.io/static/v1?label=npm&message=9.5.0&color=199bba) ![](https://img.shields.io/static/v1?label=node&message=19.7.0&color=199bba) ![](https://img.shields.io/static/v1?label=Framework&message=Express.js&color=199bba) ![](https://img.shields.io/static/v1?label=ORM&message=Sequelize&color=199bba)
 
 <h4 align="center"> 
 	🚧  Consultamed 🚀 Em construção...  🚧
