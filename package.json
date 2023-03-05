@@ -1,0 +1,31 @@
+{
+  "name": "consultamed-api",
+  "version": "1.0.0",
+  "description": "Agendamento de consultas online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusmendescosta/consultamed-api.git"
+  },
+  "author": "Matheus Mendes",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/matheusmendescosta/consultamed-api/issues"
+  },
+  "homepage": "https://github.com/matheusmendescosta/consultamed-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.29.0",
+    "swagger-ui-express": "^4.6.2",
+    "winston": "^3.8.2"
+  }
+}
