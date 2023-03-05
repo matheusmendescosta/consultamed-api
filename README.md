@@ -34,9 +34,12 @@ database='agendamento_development'
 - Inicie o servidor com o comando
 `npm run dev`
 
+- Para ter acesso a documentação acesse a rota
+`http://localhost:3000/documentacao/`
 
 ### Features implementadas
-
+- [x] Logs
+- [x] Documentação
 - [x] Rota paciente
 - [ ] Rota Medico
 - [ ] Rota Consulta
