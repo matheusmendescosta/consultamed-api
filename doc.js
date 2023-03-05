@@ -20,7 +20,7 @@ export const swaggerDocument =
   ],
   "tags": [
     {
-      "name": "paciente",
+      "name": "Paciente",
       "description": "Tudo sobre a rota paciente",
       "externalDocs": {
         "description": "Saiba mais",
@@ -40,7 +40,7 @@ export const swaggerDocument =
     "/paciente": {
       "put": {
         "tags": [
-          "paciente"
+          "Paciente"
         ],
         "summary": "Atualiza um paciente",
         "description": "Atualize um paciente por id",
@@ -95,7 +95,7 @@ export const swaggerDocument =
       },
       "post": {
         "tags": [
-          "paciente"
+          "Paciente"
         ],
         "summary": "Adicionar um novo paciente",
         "description": "Adiciona um novo paciente",
@@ -154,7 +154,7 @@ export const swaggerDocument =
     "/pacientes/": {
       "get": {
         "tags": [
-          "paciente"
+          "Paciente"
         ],
         "summary": "Lista todos pacientes",
         "description": "Retorna a lista de todos o pacientes",
@@ -187,7 +187,7 @@ export const swaggerDocument =
     "/paciente/{id}": {
       "get": {
         "tags": [
-          "paciente"
+          "Paciente"
         ],
         "summary": "Lista paciente por ID",
         "description": "Retorna apenas um paciente",
@@ -230,7 +230,7 @@ export const swaggerDocument =
       },
       "delete": {
         "tags": [
-          "paciente"
+          "Paciente"
         ],
         "summary": "Deleta um paciente",
         "description": "Exclui um paciente",

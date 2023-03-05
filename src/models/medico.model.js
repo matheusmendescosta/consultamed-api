@@ -1,7 +1,7 @@
-import Sequelize from "sequelize";
+import  Sequelize  from "sequelize";
 import db from "../repositories/db.js";
 
-const Paciente = db.define('pacientes', {
+const Medico = db.define("medicos", {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,8 +12,8 @@ const Paciente = db.define('pacientes', {
         type: Sequelize.STRING,
         allowNull: true,
     },
-    dataNascimento: {
-        type: Sequelize.DATE,
+    especialidade: {
+        type: Sequelize.STRING,
         allowNull: true,
     },
     telefone: {
@@ -24,6 +24,6 @@ const Paciente = db.define('pacientes', {
         type: Sequelize.STRING,
         allowNull: true,
     }
-}, { underscored: true }) //entende o _ ex: data_nascimento
+})
 
-export default Paciente;
+export default Medico;
