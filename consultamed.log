@@ -56,3 +56,40 @@ notNull Violation: paciente.nome cannot be null
 2023-03-05T02:11:59.663Z [consultamed-api] info GET /paciente
 2023-03-05T03:33:48.572Z [consultamed-api] info GET /paciente
 2023-03-05T03:33:51.643Z [consultamed-api] info GET /pacientes
+2023-03-05T14:50:37.872Z [consultamed-api] info GET /pacientes
+2023-03-05T14:51:31.924Z [consultamed-api] info GET /pacientes
+2023-03-05T14:51:35.186Z [consultamed-api] info GET /paciente
+2023-03-05T15:37:42.462Z [consultamed-api] info GET /pacientes
+2023-03-05T15:37:57.960Z [consultamed-api] info GET /pacientes
+2023-03-05T16:51:20.692Z [consultamed-api] info POST /medico {"id":1,"nome":"DR Brasil","especialidade":"Cardiologia","telefone":"96912345678","email":"drbrasil@consultamed.com"}
+2023-03-05T17:42:45.959Z [consultamed-api] info GET /medico
+2023-03-05T18:03:51.614Z [consultamed-api] info GET /medico
+2023-03-05T18:04:11.294Z [consultamed-api] info GET /medicos
+2023-03-05T18:04:39.395Z [consultamed-api] info GET /paciente
+2023-03-05T18:05:27.155Z [consultamed-api] info GET /medico
+2023-03-05T18:05:32.960Z [consultamed-api] info GET /medicos
+2023-03-05T18:05:36.468Z [consultamed-api] info GET /medico
+2023-03-05T18:05:46.723Z [consultamed-api] info GET /medico
+2023-03-05T18:11:57.391Z [consultamed-api] info GET /medicos
+2023-03-05T18:12:23.474Z [consultamed-api] info GET /medico
+2023-03-05T18:13:34.699Z [consultamed-api] info POST /medico {"id":2,"nome":"Dr João de Barros","especialidade":"nefrologista","telefone":"9699994444","email":"drjoaobarros@consultamed.com"}
+2023-03-05T18:13:46.735Z [consultamed-api] info POST /medico {"id":3,"nome":"Dr teste","especialidade":"test","telefone":"9699994444","email":"teste@consultamed.com"}
+2023-03-05T18:13:49.911Z [consultamed-api] info GET /medicos
+2023-03-05T18:13:57.339Z [consultamed-api] error DELETE  - medico is not defined
+2023-03-05T18:14:01.053Z [consultamed-api] info GET /medicos
+2023-03-05T18:14:34.617Z [consultamed-api] info GET /medicos
+2023-03-05T18:15:04.513Z [consultamed-api] info POST /medico {"id":4,"nome":"Dr Bala","especialidade":"Médico do tabalho","telefone":"9699994444","email":"bala@consultamed.com"}
+2023-03-05T18:19:52.292Z [consultamed-api] error PUT  - Class constructor model cannot be invoked without 'new'
+2023-03-05T18:23:11.256Z [consultamed-api] info GET /medicos
+2023-03-05T18:23:18.980Z [consultamed-api] error PUT  - Class constructor model cannot be invoked without 'new'
+2023-03-05T18:25:17.460Z [consultamed-api] error PUT  - Class constructor model cannot be invoked without 'new'
+2023-03-05T18:25:57.099Z [consultamed-api] error PUT  - Class constructor model cannot be invoked without 'new'
+2023-03-05T18:29:13.646Z [consultamed-api] info GET /pacientes
+2023-03-05T18:29:29.655Z [consultamed-api] info PUT /paciente - {"id":2,"nome":"Felipe Mendes da Costa","dataNascimento":"1999-04-05","telefone":"96981137799","email":"felipe_mendess@icloud.com"}
+2023-03-05T18:30:12.006Z [consultamed-api] error PUT  - Class constructor model cannot be invoked without 'new'
+2023-03-05T18:31:18.148Z [consultamed-api] error PUT  - The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received an instance of medicos
+2023-03-05T18:33:05.272Z [consultamed-api] info GET /medicos
+2023-03-05T18:33:21.993Z [consultamed-api] info GET /medicos
+2023-03-05T18:33:46.090Z [consultamed-api] error PUT  - The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received an instance of medicos
+2023-03-05T18:35:56.661Z [consultamed-api] info PUT /medico {"id":1,"nome":"DR Brasil","especialidade":"Cardiologia","telefone":"96912345678","email":"drbrasil@consultamed.com"}
+2023-03-05T18:41:13.467Z [consultamed-api] info GET /medico
