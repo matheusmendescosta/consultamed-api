@@ -34,6 +34,14 @@ export const swaggerDocument =
         "description": "Saiba mais",
         "url": "http://swagger.io"
       }
+    },
+    {
+      "name": "Consulta",
+      "description": "Tudo sobre a rota medico",
+      "externalDocs": {
+        "description": "Saiba mais",
+        "url": "http://swagger.io"
+      }
     }
   ],
   "paths": {
@@ -276,17 +284,17 @@ export const swaggerDocument =
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             },
             "application/xml": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             },
             "application/x-www-form-urlencoded": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             }
           },
@@ -298,12 +306,12 @@ export const swaggerDocument =
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               }
             }
@@ -331,17 +339,17 @@ export const swaggerDocument =
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             },
             "application/xml": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             },
             "application/x-www-form-urlencoded": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/Medico"
               }
             }
           },
@@ -353,12 +361,12 @@ export const swaggerDocument =
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               }
             }
@@ -380,12 +388,12 @@ export const swaggerDocument =
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               }
             }
@@ -425,12 +433,12 @@ export const swaggerDocument =
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/Medico"
                 }
               }
             }
@@ -450,6 +458,221 @@ export const swaggerDocument =
         "summary": "Deleta um medico",
         "description": "Exclui um medico",
         "operationId": "deleteMedico",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "medico id to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid medico value"
+          }
+        }
+      }
+    },
+    "/consulta": {
+      "put": {
+        "tags": [
+          "Consulta"
+        ],
+        "summary": "Atualiza uma consulta",
+        "description": "Atualize uma consulta por id",
+        "operationId": "updateConsulta",
+        "requestBody": {
+          "description": "Atualiza uma consulta já cadastrado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "consulta not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Consulta"
+        ],
+        "summary": "Adicionar um novo consulta",
+        "description": "Adiciona um novo consulta",
+        "operationId": "createConsulta",
+        "requestBody": {
+          "description": "Cria um novo consulta",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Consulta"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Consulta/": {
+      "get": {
+        "tags": [
+          "Consulta"
+        ],
+        "summary": "Lista todas as consultas",
+        "description": "Retorna a lista de todas as consultas",
+        "operationId": "getConsultas",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "consulta not found"
+          }
+        }
+      }
+    },
+    "/Consulta/{id}": {
+      "get": {
+        "tags": [
+          "Consulta"
+        ],
+        "summary": "Lista medico por ID",
+        "description": "Retorna apenas uma consulta",
+        "operationId": "getConsultaById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of pet to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consulta"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "consulta not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Consulta"
+        ],
+        "summary": "Deleta uma consulta",
+        "description": "Exclui uma consulta",
+        "operationId": "deleteConsulta",
         "parameters": [
           {
             "name": "api_key",
@@ -549,37 +772,49 @@ export const swaggerDocument =
           "name": "Medico"
         }
       },
-      "ApiResponse": {
+      "Consulta": {
+        "required": [
+          "dataHora"
+        ],
         "type": "object",
         "properties": {
-          "code": {
+          "id": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64",
+            "example": 10
           },
-          "type": {
-            "type": "string"
+          "dataHora": {
+            "type": "string",
+            "example": "12/11/1996 16:20"
           },
-          "message": {
-            "type": "string"
+          "pacienteId": {
+            "type": "integer",
+            "description": "relacionamento com paciente",
+            "example": 1
+          },
+          "medicoId": {
+            "type": "integer",
+            "description": "relacionamento com medico",
+            "example": 2
           }
         },
         "xml": {
-          "name": "##default"
+          "name": "Medico"
         }
       }
     },
     "requestBodies": {
-      "Pet": {
-        "description": "Pet object that needs to be added to the store",
+      "Consulta": {
+        "description": "Consulta precisa de de paciente e medico",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Paciente"
+              "$ref": "#/components/schemas/Consulta"
             }
           },
           "application/xml": {
             "schema": {
-              "$ref": "#/components/schemas/Paciente"
+              "$ref": "#/components/schemas/Consulta"
             }
           }
         }
@@ -592,8 +827,8 @@ export const swaggerDocument =
           "implicit": {
             "authorizationUrl": "https://petstore3.swagger.io/oauth/authorize",
             "scopes": {
-              "write:pets": "modify pets in your account",
-              "read:pets": "read your pets"
+              "write:consulta": "alterar medico da consulta",
+              "read:Medico": "Seus medicos"
             }
           }
         }

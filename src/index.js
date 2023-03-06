@@ -5,6 +5,7 @@ import SwaggerUi from "swagger-ui-express";
 import { swaggerDocument } from "../doc.js";
 import pacienteRouter from "./routes/paciente.route.js"
 import medicoRouter from "./routes/medico.route.js"
+import consultaRouter from "./routes/consulta.route.js"
 
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -29,6 +30,7 @@ app.use(cors())
 app.use("/documentacao", SwaggerUi.serve, SwaggerUi.setup(swaggerDocument))
 app.use("/paciente", pacienteRouter)
 app.use("/medico", medicoRouter)
+app.use("/consulta", consultaRouter)
 
 app.use((err, req, res, next) => {
   logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
