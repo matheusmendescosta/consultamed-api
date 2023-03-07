@@ -31,6 +31,9 @@ password= 'sua_senha'
 database='agendamento_development'
 ```
 - crie também um arquivo chamado **consultamed.log** esse arquivo manterá todos os logs da api registrados
+
+- Instale as dependências 
+`npm install`
 - Inicie o servidor com o comando
 `npm run dev`
 
