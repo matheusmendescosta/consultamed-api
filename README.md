@@ -18,19 +18,19 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ### 🎲 Rodando o Back End (servidor)
 
 
-- Primeiro passo crie um Banco de Dados 
-` create database agendamento_development`
+- Primeiro passo execute o script *agendamento_development.sql* para criar o banco de dados e as tabelas
 
 - Agora faça o clone do projeto
 `git clone <https://github.com/matheusmendescosta/consultamed-api>`
 
-- Na pasta do projeto crie um arquivo chamado .env e informe as credenciais do seu banco de dados
+- Na raiz do projeto crie um arquivo chamado** .env **e informe as credenciais do seu banco de dados
 ```
 host= 'localhost'
 username= 'seu_usuario'
 password= 'sua_senha'
 database='agendamento_development'
 ```
+- crie também um arquivo chamado **consultamed.log** esse arquivo manterá todos os logs da api registrados
 - Inicie o servidor com o comando
 `npm run dev`
 
@@ -41,6 +41,6 @@ database='agendamento_development'
 - [x] Logs
 - [x] Documentação
 - [x] Rota paciente
-- [ ] Rota Medico
-- [ ] Rota Consulta
+- [x] Rota Medico
+- [x] Rota Consulta
 - [ ] Rota Historico de Consulta
