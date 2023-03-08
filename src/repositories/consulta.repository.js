@@ -23,7 +23,7 @@ async function getConsultas() {
             ]
         })
     } catch (error) {
-        
+        throw error
     }
 }
 

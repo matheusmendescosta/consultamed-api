@@ -46,4 +46,4 @@ database='agendamento_development'
 - [x] Rota paciente
 - [x] Rota Medico
 - [x] Rota Consulta
-- [ ] Rota Historico de Consulta
+- [x] Rota Historico de Consulta
