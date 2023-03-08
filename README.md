@@ -40,6 +40,10 @@ database='agendamento_development'
 - Para ter acesso a documentação acesse a rota
 `http://localhost:3000/documentacao/`
 
+- Acesses as rotas via Insomnia 
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=consultamed&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fmatheusmendescosta%2Fconsultamed-api%2Fmain%2FInsomniaExportData)
+
 ### Features implementadas
 - [x] Logs
 - [x] Documentação
