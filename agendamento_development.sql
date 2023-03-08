@@ -10,34 +10,34 @@ create database agendamento_development;
 
 use agendamento_development;
 
-create table pacientes (
-  id int not null,
-  nome varchar(150),
+create table pacientes(
+  id int primary key not null auto_increment,
+  nome varchar(250),
   data_nascimento date not null,
-  telefone varchar(150),
-  email varchar(250),
-  primary key (id)
+  telefone varchar(250),
+  email varchar(250)
 );
-
-create table medicos (
-  id int not null primary key,
+create table medicos(
+  id int primary key not null auto_increment,
   nome varchar(250),
   especialidade varchar(250),
   telefone varchar(250),
-  email varchar(250),
+  email varchar(250)
+ );
+create table consultas(
+  id int primary key not null auto_increment,
+  data_hora datetime not null,
+  paciente_id int not null,
+  medico_id int not null,
+  foreign key (paciente_id) references pacientes(id),
+  foreign key (medico_id) references medicos(id)
 );
-
-create table consultas (
-  id int primary key not null,
-  data_hora datetime,
-  id_paciente primary key (id) references (id)
-  id_medico primary key (id) references (id)
-);
-
-create table historico_consultas (
-  id int primary key not null,
-  id_paciente int foreign key (id_paciente),
-  id_medico int foreign key (id_medico),
-  data_hota datetime,
-  diagnostico varchar(1000)
+create table historico_consultas(
+  id int primary key not null auto_increment,
+  consulta_id int not null,
+  data_hota datetime not null,
+  tratamento varchar(1000),
+  sintomas varchar(1000),
+  diagnostico varchar(1000),
+  foreign key (consulta_id) references consultas(id)
 );  
