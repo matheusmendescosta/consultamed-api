@@ -1,0 +1,183 @@
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+--
+-- Host: localhost    Database: agendamento_development
+-- ------------------------------------------------------
+-- Server version	8.0.32-0ubuntu0.22.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `consultas`
+--
+
+DROP TABLE IF EXISTS `consultas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `consultas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `data` datetime NOT NULL,
+  `paciente_id` int NOT NULL,
+  `medico_id` int NOT NULL,
+  `hora` time DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente_id` (`paciente_id`),
+  KEY `medico_id` (`medico_id`),
+  CONSTRAINT `consultas_ibfk_1` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `consultas`
+--
+
+LOCK TABLES `consultas` WRITE;
+/*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
+INSERT INTO `consultas` VALUES (30,'2023-04-14 00:00:00',38,5,'14:30:00'),(31,'2023-04-17 00:00:00',38,5,'15:00:00'),(32,'2023-05-01 00:00:00',38,5,'09:00:00'),(33,'2023-03-15 00:00:00',38,5,'19:30:00'),(34,'2023-05-05 00:00:00',39,8,'20:00:00'),(35,'2023-05-10 00:00:00',38,8,'15:30:00'),(36,'2023-05-12 00:00:00',38,7,'14:30:00'),(37,'2023-04-17 00:00:00',39,7,'18:00:00');
+/*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `especialidades`
+--
+
+DROP TABLE IF EXISTS `especialidades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `especialidades` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `especialidades`
+--
+
+LOCK TABLES `especialidades` WRITE;
+/*!40000 ALTER TABLE `especialidades` DISABLE KEYS */;
+INSERT INTO `especialidades` VALUES (1,'Alergologia'),(2,'Angiologia'),(3,'Bucomaxilofacial'),(4,'Cardiologia'),(5,'Clínica Médica'),(6,'Dermatologia'),(7,'Endocrinologia e Metabologia'),(8,'Gastroenterologia'),(9,'Geriatria'),(10,'Ginecologia e Obstetrícia'),(11,'Hematologia e Hemoterapia'),(12,'Infectologia'),(13,'Mastologia'),(14,'Nefrologia'),(15,'Neurologia'),(16,'Oftalmologia'),(17,'Ortopedia e Traumatologia'),(18,'Otorrinolaringologia'),(19,'Pediatria'),(20,'Pneumologia'),(21,'Psiquiatria'),(22,'Reumatologia'),(23,'Urologia');
+/*!40000 ALTER TABLE `especialidades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `historico_consultas`
+--
+
+DROP TABLE IF EXISTS `historico_consultas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `historico_consultas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `data_hota` datetime DEFAULT NULL,
+  `consulta_id` int NOT NULL,
+  `sintomas` varchar(1000) DEFAULT NULL,
+  `diagnostico` varchar(1000) DEFAULT NULL,
+  `tratamento` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `consulta_id` (`consulta_id`),
+  CONSTRAINT `historico_consultas_ibfk_1` FOREIGN KEY (`consulta_id`) REFERENCES `consultas` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historico_consultas`
+--
+
+LOCK TABLES `historico_consultas` WRITE;
+/*!40000 ALTER TABLE `historico_consultas` DISABLE KEYS */;
+INSERT INTO `historico_consultas` VALUES (1,'2023-04-12 15:25:56',30,'Dificuldade de respirar, dores no peito, dor de cabeça','Quadro grave de rinite aguda','Repouso, tomar loratadina 50g de 12 em 12 horas'),(2,'2023-04-13 18:42:25',33,'Vamos ver se isso vai fazer com que a consulta já seja realizada','consultas já realizadas estão sendo listadas como antiga','Isso é certo, pois se já rolou a consulta ela é antiga'),(3,'2023-04-14 17:48:20',37,'Realizando uma consulta para atualizar a lista de agendamentos','Gerar a lista separando consultas realizadas ','Lista todas as consultas realizadas e não realizadas');
+/*!40000 ALTER TABLE `historico_consultas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `medicos`
+--
+
+DROP TABLE IF EXISTS `medicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `medicos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(250) DEFAULT NULL,
+  `telefone` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `especialidade_id` int NOT NULL,
+  `crm` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `especialidade_id` (`especialidade_id`),
+  CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`especialidade_id`) REFERENCES `especialidades` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `medicos`
+--
+
+LOCK TABLES `medicos` WRITE;
+/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
+INSERT INTO `medicos` VALUES (5,'Ivair Magalhães da Costa','96981297493','ivairmagalhaes@icloud.com',16,'CRMAP589827'),(6,'Izabele Sá','96981105588','izabelesadovalle@gmail.com',5,'CRMAP-755512'),(7,'Antonia Pedroso','96981440440','antoniapedrosomendes@gmail.com',19,'CRMSP-784512'),(8,'Teraza Sá','96981445566','terezasa@gmail.com',8,'CRM5511144');
+/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pacientes`
+--
+
+DROP TABLE IF EXISTS `pacientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pacientes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(150) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `telefone` varchar(150) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `altura` float DEFAULT NULL,
+  `peso` float DEFAULT NULL,
+  `alergia` tinyint(1) DEFAULT NULL,
+  `tipo_alergia` varchar(255) DEFAULT NULL,
+  `rua` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `municipio` varchar(255) DEFAULT NULL,
+  `estado` varchar(255) DEFAULT NULL,
+  `numero` int DEFAULT NULL,
+  `cep` int DEFAULT NULL,
+  `doenca_cronica` tinyint(1) DEFAULT NULL,
+  `tipo_doenca_cronica` varchar(255) DEFAULT NULL,
+  `medicacao_continua` tinyint(1) DEFAULT NULL,
+  `tipo_medicacao_continua` varchar(255) DEFAULT NULL,
+  `image_perfil` blob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pacientes`
+--
+
+LOCK TABLES `pacientes` WRITE;
+/*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
+INSERT INTO `pacientes` VALUES (38,'Matheus Mendes da Costa','1996-11-12','96984234927','matheusmendescosta@icloud.com',1.78,79.5,1,'Rinite, Sinusite','Rua Walter Barbosa de Araújo','Fonte Nova','Santana','Amapá',40,68928157,0,NULL,0,'Loratadina, desloratadina',NULL),(39,'Izabele Sá do Valle','2000-04-26','96991107799','izabelesadovalle@gmail.com',1.63,80.5,1,'Alergia a poeira','Tv Beijamim Constant','Universidade','Macapá','Amapá',231,68905510,1,'SOP - síndrome do ovário policístico ',1,'Ciclo 21',NULL);
+/*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-04-14 17:50:17
