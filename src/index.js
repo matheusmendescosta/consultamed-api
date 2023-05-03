@@ -28,6 +28,9 @@ app.use("/medico", medicoRouter);
 app.use("/consulta", consultaRouter);
 app.use("/historicoConsultas", historicoConsultas);
 app.use("/especialidades", especialidadeRouter);
+app.use("/health", (req, res) => {
+  res.status(200).send({});
+});
 
 app.use((err, req, res, next) => {
   logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
